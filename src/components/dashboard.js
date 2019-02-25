@@ -1,13 +1,10 @@
 import React from "react";
-import { connect } from "react-redux";
 import requiresLogin from "./requires-login";
 import { fetchProtectedData } from "../actions/protected-data";
-import { Link } from "react-router-dom";
-import icon from "./icon.png";
+
 import "./App.css";
 import MapView from "./Mapview";
 import Sidebar from "./Sidebar";
-import "./Navbar.css";
 
 const API_KEY = process.env.REACT_APP_TRAILS_API_KEY;
 
@@ -31,11 +28,9 @@ class Dashboard extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
-  }
 
   componentDidMount() {
+    this.props.dispatch(fetchProtectedData());
     fetch(
       `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=0&key=${API_KEY}`
     )
@@ -112,18 +107,7 @@ class Dashboard extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className="dashboard">
-          <div className="dashboard-username">
-            Username: {this.props.username}
-          </div>
-          <div className="dashboard-name">Name: {this.props.name}</div>
-          <div className="dashboard-protected-data">
-            Protected data: {this.props.protectedData}
-          </div>
-          <div className="topnav">
-            <h1>Peek </h1>
-            <img src={icon} alt="Logo" className="icon" />
-          </div>
+        <div>
           <Sidebar
             disabled={this.state.disabled}
             trails={this.state.trails}
@@ -145,13 +129,4 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { currentUser } = state.auth;
-  return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data
-  };
-};
-
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default requiresLogin()(Dashboard);
