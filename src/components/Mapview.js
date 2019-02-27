@@ -19,7 +19,7 @@ const MapView = props => {
   const position = [props.lat, props.lng];
   return (
     <Map
-      style={{ height: "800px", marginLeft: "475px" }}
+      style={{ height: "100vh", marginLeft: "475px" }}
       className="map"
       center={position}
       zoom={props.zoom}

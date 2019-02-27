@@ -1,6 +1,8 @@
 import React from "react";
 import Filter from "./Filter";
 
+import "./Sidebar.css";
+
 const Sidebar = props => {
   return (
     <ul className="sidebar">
@@ -18,6 +20,7 @@ const Sidebar = props => {
           >
             {item.name}
           </h2>
+
           <input id={item.id} className="toggle" type="checkbox" />
           <label htmlFor={item.id} className="lbl-toggle">
             More Info
@@ -27,6 +30,7 @@ const Sidebar = props => {
               <p>{item.summary}</p>
             </div>
             <button
+              className="wishlistButton"
               disabled={props.disabled.indexOf(item.id) !== -1}
               onClick={() => {
                 props.disableButton(item);
@@ -42,6 +46,13 @@ const Sidebar = props => {
               // }}
             >
               Add to Wishlist
+            </button>
+            <button
+              onClick={() => {
+                props.mapItem(item);
+              }}
+            >
+              zoom to
             </button>
           </div>
         </li>
