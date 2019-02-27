@@ -9,6 +9,7 @@ const Sidebar = props => {
       <Filter
         handleSubmit={props.handleSubmit}
         handleChange={props.handleChange}
+        getFavorites={props.getFavorites}
       />
       {props.trails.map(item => (
         <li key={item.id} className="polaroid">
@@ -35,17 +36,16 @@ const Sidebar = props => {
               onClick={() => {
                 props.disableButton(item);
               }}
-
-              //   let todos = [...this.state.todos];
-              //   todos.push({ id: item.id, name: item.name });
-              //   this.setState({
-              //     todos,
-              //     disabled: [...this.state.disabled, item.id]
-              //   });
-              //
-              // }}
             >
               Add to Wishlist
+            </button>
+            <button
+              todos={props.todos.indexOf(item.id) !== -1}
+              onClick={() => {
+                props.removeFavorite(item);
+              }}
+            >
+              Remove
             </button>
             <button
               onClick={() => {

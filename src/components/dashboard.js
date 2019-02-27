@@ -27,6 +27,8 @@ class Dashboard extends React.Component {
     this.mapItem = this.mapItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getFavorites = this.getFavorites.bind(this);
+    this.removeFavorite = this.removeFavorite.bind(this);
   }
 
   componentDidMount() {
@@ -75,6 +77,35 @@ class Dashboard extends React.Component {
         }
       );
   }
+
+  getFavorites() {
+    let arr = [...this.state.todos];
+    fetch(
+      `https://www.hikingproject.com/data/get-trails-by-id?ids=${arr}&key=${API_KEY}`
+    )
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            trails: result.trails
+          });
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
+  }
+
+  removeFavorite(item) {
+    let array = [...this.state.todos]; // make a separate copy of the array
+    array.splice(item, 1);
+    this.setState({ todos: array });
+  }
+
   handleSubmit(e) {
     this.setState({ [e.target.name]: e.target.value });
     e.preventDefault();
@@ -94,7 +125,7 @@ class Dashboard extends React.Component {
 
   disableButton(item) {
     this.setState({
-      todos: [...this.state.todos, { name: item.name, id: item.id }],
+      todos: [...this.state.todos, item.id],
       disabled: [...this.state.disabled, item.id]
     });
   }
@@ -113,9 +144,11 @@ class Dashboard extends React.Component {
             trails={this.state.trails}
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
+            getFavorites={this.getFavorites}
             mapItem={this.mapItem}
             disableButton={this.disableButton}
-            todos={this.todos}
+            removeFavorite={this.removeFavorite}
+            todos={this.state.todos}
           />
           <MapView
             trails={this.state.trails}

@@ -4,15 +4,23 @@ import "./Filter.css";
 const MapView = props => {
   return (
     <div>
+      <input id="favorties" className="favorites-toggle" type="checkbox" />
+      <label
+        htmlFor="favorties"
+        className="favorites"
+        onClick={props.getFavorites}
+      >
+        Favorites
+      </label>
       <input id="filter" className="toggle" type="checkbox" />
-      <label htmlFor="filter" className="lbl-toggle">
+      <label htmlFor="filter" className="lbl-toggle-filter">
         Filter
       </label>
       <div className="collapsible-content">
         <div className="content-inner">
           <form onSubmit={props.handleSubmit}>
             <select name="maxDis" onChange={props.handleChange}>
-              <option selected disabled>
+              <option disabled selected>
                 Distance
               </option>
               <option value="1">1 mile</option>
@@ -22,18 +30,18 @@ const MapView = props => {
               <option value="20">20 miles</option>
             </select>
             <select name="maxRes" onChange={props.handleChange}>
-              <option selected disabled>
+              <option disabled selected>
                 Results
               </option>
               <option value="1">1</option>
-              <option value="2">5</option>
-              <option value="3">10</option>
-              <option value="4">20</option>
-              <option value="5">30</option>
-              <option value="5">50</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
             </select>
             <select name="star" onChange={props.handleChange}>
-              <option selected disabled>
+              <option disabled selected>
                 Minimum Rating
               </option>
               <option value="1">1 star</option>
