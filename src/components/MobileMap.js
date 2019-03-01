@@ -1,9 +1,8 @@
 import React from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import "./App.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "./Mapview.css";
+import "./Sidebar.css";
 
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 
@@ -20,7 +19,7 @@ const MapView = props => {
   const position = [props.lat, props.lng];
   return (
     <Map
-      className="map"
+      className="mobileMap"
       center={position}
       zoom={props.zoom}
       maxZoom={18}

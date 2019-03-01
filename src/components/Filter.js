@@ -7,20 +7,24 @@ const MapView = props => {
       <input id="favorties" className="favorites-toggle" type="checkbox" />
       <label
         htmlFor="favorties"
-        className="favorites"
+        className="favorites label"
         onClick={props.getFavorites}
       >
         Favorites
       </label>
       <input id="filter" className="toggle" type="checkbox" />
-      <label htmlFor="filter" className="lbl-toggle-filter">
-        Filter
+      <label
+        htmlFor="filter"
+        className="lbl-toggle-filter label"
+        onClick={props.filterTrails}
+      >
+        Search
       </label>
       <div className="collapsible-content">
         <div className="content-inner">
           <form onSubmit={props.handleSubmit}>
             <select name="maxDis" onChange={props.handleChange}>
-              <option disabled selected>
+              <option disabled selected className="option">
                 Distance
               </option>
               <option value="1">1 mile</option>

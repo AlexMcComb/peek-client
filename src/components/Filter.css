@@ -32,7 +32,7 @@ input {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 4px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -68,37 +68,6 @@ input:hover {
 
 .favorites:hover {
   font-size: 1.25rem;
-}
-
-.favorites::before {
-  content: " ";
-  display: inline-block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
-  vertical-align: middle;
-  margin-right: 0.7rem;
-  transform: translateY(-2px);
-  transition: transform 0.2s ease-out;
-}
-
-.favorites-collapsible-content {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.25s ease-in-out;
-}
-
-.favorits-toggle:checked + .favorites + .favorites-collapsible-content {
-  max-height: 350px;
-}
-
-.favorites-toggle:checked + .favorites::before {
-  transform: rotate(90deg) translateX(-3px);
-}
-
-.favorites-toggle:checked + .favorites {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .lbl-toggle-filter {
@@ -146,4 +115,23 @@ input:hover {
 .toggle:checked + .lbl-toggle-filter {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .label,
+  input {
+    font-size: 13px;
+  }
+
+  .label:hover {
+    font-size: 13px;
+  }
+
+  select {
+    font-size: 12px;
+    margin-left: 13px;
+  }
+}
+
+@media screen and (max-width: 400px) {
 }

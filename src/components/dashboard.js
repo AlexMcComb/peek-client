@@ -29,6 +29,7 @@ class Dashboard extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getFavorites = this.getFavorites.bind(this);
     this.removeFavorite = this.removeFavorite.bind(this);
+    this.filterTrails = this.filterTrails.bind(this);
   }
 
   componentDidMount() {
@@ -54,56 +55,95 @@ class Dashboard extends React.Component {
   }
 
   filterTrails() {
-    fetch(
-      `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxDistance=${
-        this.state.maxDist
-      }&minStars=${this.state.star}&maxResults=${
-        this.state.maxRes
-      }&key=${API_KEY}`
-    )
-      .then(res => res.json())
-      .then(
-        result => {
+    let arr = [...this.state.maxRes];
+    if (arr.length > 0) {
+      fetch(
+        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxDistance=${
+          this.state.maxDist
+        }&minStars=${this.state.star}&maxResults=${
+          this.state.maxRes
+        }&key=${API_KEY}`
+      )
+        .then(res => res.json())
+        .then(
+          result => {
+            this.setState({
+              isLoaded: true,
+              trails: result.trails,
+              remove: "none",
+              wishButton: "inline"
+            });
+          },
+          error => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        );
+    } else {
+      fetch(
+        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=0&key=${API_KEY}`
+      )
+        .then(res => res.json())
+        .then(result => {
           this.setState({
             isLoaded: true,
             trails: result.trails
           });
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      );
+        });
+    }
   }
 
   getFavorites() {
     let arr = [...this.state.todos];
-    fetch(
-      `https://www.hikingproject.com/data/get-trails-by-id?ids=${arr}&key=${API_KEY}`
-    )
-      .then(res => res.json())
-      .then(
-        result => {
+    if (arr.length > 0) {
+      fetch(
+        `https://www.hikingproject.com/data/get-trails-by-id?ids=${arr}&key=${API_KEY}`
+      )
+        .then(res => res.json())
+        .then(result => {
+          this.setState({
+            isLoaded: true,
+            trails: result.trails,
+            remove: "inline",
+            wishButton: "none"
+          });
+        });
+    } else {
+      alert("No favorites have been added!");
+    }
+  }
+
+  removeFavorite(item) {
+    let todos = [...this.state.todos];
+    let disabled = [...this.state.disabled];
+    todos.splice(item, 1);
+    disabled.splice(item, 1);
+    this.setState({ todos: todos, disabled: disabled });
+    if (todos.length > 0) {
+      fetch(
+        `https://www.hikingproject.com/data/get-trails-by-id?ids=${todos}&key=${API_KEY}`
+      )
+        .then(res => res.json())
+        .then(result => {
           this.setState({
             isLoaded: true,
             trails: result.trails
           });
-        },
-        error => {
+        });
+    } else {
+      fetch(
+        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=0&key=${API_KEY}`
+      )
+        .then(res => res.json())
+        .then(result => {
           this.setState({
             isLoaded: true,
-            error
+            trails: result.trails
           });
-        }
-      );
-  }
-
-  removeFavorite(item) {
-    let array = [...this.state.todos]; // make a separate copy of the array
-    array.splice(item, 1);
-    this.setState({ todos: array });
+        });
+    }
   }
 
   handleSubmit(e) {
@@ -149,6 +189,12 @@ class Dashboard extends React.Component {
             disableButton={this.disableButton}
             removeFavorite={this.removeFavorite}
             todos={this.state.todos}
+            filterTrails={this.filterTrails}
+            remove={this.state.remove}
+            wishButton={this.state.wishButton}
+            zoom={this.state.zoom}
+            lat={this.state.lat}
+            lng={this.state.lng}
           />
           <MapView
             trails={this.state.trails}
