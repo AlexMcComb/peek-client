@@ -24,7 +24,7 @@ const MapView = props => {
         <div className="content-inner">
           <form onSubmit={props.handleSubmit}>
             <select name="maxDis" onChange={props.handleChange}>
-              <option disabled selected className="option">
+              <option disabled selected>
                 Distance
               </option>
               <option value="1">1 mile</option>
@@ -54,7 +54,7 @@ const MapView = props => {
               <option value="4">4 star</option>
               <option value="5">5 star</option>
             </select>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="input" />
           </form>
         </div>
       </div>

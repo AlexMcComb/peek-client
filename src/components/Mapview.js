@@ -10,8 +10,8 @@ const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 const url = `https://api.mapbox.com/styles/v1/alexmcc/cjry5mcrd195w1fo6aovuurl5/tiles/256/{z}/{x}/{y}@2x?access_token=${MAPBOX_ACCESS_TOKEN}`;
 
 const myIcon = L.icon({
-  iconUrl: "https://i.ibb.co/PCWb9cs/adventurer.png",
-  iconSize: [40, 41],
+  iconUrl: "https://i.ibb.co/vkhtTvf/marker.png",
+  iconSize: [31, 34],
   iconAnchor: [12.5, 41],
   popupAnchor: [0, -41]
 });
@@ -36,7 +36,11 @@ const MapView = props => {
         >
           >
           <Popup autoPan={false}>
-            <em>{item.name}</em> {item.conditionDetails}
+            <em>{item.name}</em>
+            <br />
+            Condition: {item.conditionStatus}
+            <br />
+            Condition Date: {item.conditionDate}
           </Popup>
         </Marker>
       ))}

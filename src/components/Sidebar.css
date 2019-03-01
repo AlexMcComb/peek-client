@@ -82,7 +82,7 @@ input[type="checkbox"] {
   transition: max-height 0.25s ease-in-out;
 }
 .toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 350px;
+  max-height: 650px;
 }
 
 .toggle:checked + .lbl-toggle::before {
@@ -133,6 +133,13 @@ button:disabled .wishlistButton,
 button[disabled] {
   background-color: #cccccc;
 }
+.mobileMap {
+  display: none;
+}
+
+strong {
+  font-weight: 900;
+}
 
 @media screen and (max-width: 850px) {
   .sidebar {
@@ -141,14 +148,20 @@ button[disabled] {
   h2 {
     font-size: 16px;
   }
+
+  .mobileMap {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .mobileMap {
-    height: 40vh;
-    margin-left: 5px;
-    width: 90vw;
+    height: 50vh;
+    margin-top: 5px;
+    width: 100vw;
+    display: block;
   }
+
   .label {
     font-size: 14px;
   }

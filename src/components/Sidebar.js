@@ -31,7 +31,29 @@ const Sidebar = props => {
           </label>
           <div className="collapsible-content">
             <div className="content-inner label">
-              <p>{item.summary}</p>
+              <p>
+                <strong>Location: </strong>
+                {item.location}
+              </p>
+              <p>
+                <strong>Rating: </strong>
+                {item.stars}
+              </p>
+              <p>
+                <strong>Length: </strong>
+                {item.length} miles
+              </p>
+              <p>
+                <strong>Ascent: </strong>
+                {item.ascent} feet
+              </p>
+              <p>
+                <strong>Difficulty: </strong>
+                {item.difficulty}
+              </p>
+              <p>
+                <strong>Summary: </strong> {item.summary}
+              </p>
             </div>
             <button
               className="wishlistButton"

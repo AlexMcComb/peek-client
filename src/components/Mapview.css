@@ -5,8 +5,6 @@
 
 @media screen and (max-width: 850px) {
   .map {
-    margin-right: -200px;
-    width: 530px;
     height: 100vh;
     margin-left: 350px;
   }

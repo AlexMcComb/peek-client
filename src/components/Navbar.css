@@ -4,7 +4,7 @@ body {
 }
 
 .topnav {
-  background-color: #f7f7ff;
+  background-color: #e7f6ff;
   overflow: hidden;
   padding-right: 2%;
   padding-left: 2%;
@@ -32,13 +32,13 @@ body {
 
 .icon {
   float: left;
-  margin-top: 10px;
-  margin-left: 60px;
+  margin-top: 15px;
+  margin-left: 50px;
   width: 55px;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav h4:first-of-type {
+  .topnav h4:nth-of-type(2) {
     display: none;
   }
   .topnav h4.icon {

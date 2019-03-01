@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
     this.state = {
       lat: 40.75,
       lng: -111.85,
-      zoom: 10,
+      zoom: 8,
       isLoaded: false,
       trails: [],
       todos: [],

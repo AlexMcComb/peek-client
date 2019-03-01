@@ -28,8 +28,9 @@ export class HeaderBar extends React.Component {
       <div className="topnav">
         <h1>Peek </h1>
         <img src={icon} alt="Logo" className="icon" />
-        {welcome}
+
         {logOutButton}
+        {welcome}
       </div>
     );
   }
