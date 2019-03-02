@@ -3,7 +3,7 @@ import "./Filter.css";
 
 const MapView = props => {
   return (
-    <div>
+    <div className="mapView">
       <input id="favorties" className="favorites-toggle" type="checkbox" />
       <label
         htmlFor="favorties"

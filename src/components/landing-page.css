@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+    url(./background.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 13px;
+  border-radius: 4px;
+  margin: 5px 0px 20px 0px;
+  background-color: white;
+  color: rgb(66, 66, 66);
+  resize: vertical;
+}
+
+.login-form {
+  border-radius: 5px;
+  background-color: rgba(27, 182, 221, 0.8);
+  padding: 2% 3% 3% 4%;
+  margin: 2% 35% 0% 35%;
+}
+
+.register-form {
+  border-radius: 5px;
+  background-color: rgba(27, 182, 221, 0.8);
+  padding: 2% 3% 3% 4%;
+  margin: -1% 35% 0% 35%;
+  color: white;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+}
+
+.formLabel {
+  font-size: 20px;
+  margin-bottom: 100px;
+  color: rgb(255, 255, 255);
+}
+
+.form-error {
+  font-size: 16px;
+  color: orange;
+}
+
+a {
+  font-size: 20px;
+  color: orange;
+}
+
+.landingButton {
+  margin-right: 35px;
+  font-size: 18px;
+}
+
+.welcome {
+  font-size: 65px;
+  color: rgb(209, 247, 252);
+  display: inline-block;
+  margin-top: 4%;
+  margin-left: 43.5%;
+  text-shadow: 1px 1px 3px rgb(94, 92, 92);
+}
+
+.tag {
+  color: rgb(238, 246, 247);
+  margin-top: 0%;
+  margin-left: 21%;
+  font-size: 50px;
+  text-shadow: 4px 3px 5px rgb(65, 64, 64);
+}
+
+@media screen and (max-width: 768px) {
+  .login-form {
+    margin: 2% 15% 0% 15%;
+  }
+
+  .register-form {
+    margin: -1% 15% 0% 15%;
+  }
+
+  .tag {
+    font-size: 40px;
+    margin-left: 5%;
+  }
+
+  .welcome {
+    margin-left: 40%;
+    margin-top: 15%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .login-form {
+    margin: 2% 7% 0% 7%;
+  }
+
+  .register-form {
+    margin: -2% 7% 0% 7%;
+  }
+
+  .tag {
+    font-size: 30px;
+    margin-left: 5%;
+  }
+
+  .welcome {
+    margin-left: 33%;
+    font-size: 55px;
+  }
+}

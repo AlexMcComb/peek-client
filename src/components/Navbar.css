@@ -15,6 +15,8 @@ body {
   color: #5dd1ee;
   display: inline-block;
   margin-left: 15px;
+  padding-left: 15px;
+  font-size: 34px;
 }
 
 /* Style the links inside the navigation bar */
