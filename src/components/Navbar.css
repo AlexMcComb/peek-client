@@ -15,8 +15,8 @@ body {
   color: #5dd1ee;
   display: inline-block;
   margin-left: 15px;
-  padding-left: 15px;
   font-size: 31px;
+  margin-top: 20px;
 }
 
 /* Style the links inside the navigation bar */
@@ -29,13 +29,14 @@ body {
   text-decoration: none;
   font-size: 18px;
   cursor: pointer;
-  margin-right: 100px;
+  margin-right: 85px;
+  margin-top: 25px;
 }
 
 .icon {
   float: left;
   margin-top: 15px;
-  margin-left: 50px;
+  margin-left: 35px;
   width: 55px;
 }
 

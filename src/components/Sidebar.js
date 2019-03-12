@@ -16,7 +16,7 @@ const Sidebar = props => {
 
       {props.trails.map(item => (
         <li key={item.id} className="polaroid">
-          <img src={item.imgMedium} alt="park" />
+          <img src={item.imgMedium} alt="default" />
           <h2
             onClick={() => {
               props.mapItem(item);
@@ -63,7 +63,7 @@ const Sidebar = props => {
               }}
               style={{ display: props.wishButton }}
             >
-              Add to Wishlist
+              Add to Favorites
             </button>
 
             <button
