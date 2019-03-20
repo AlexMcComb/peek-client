@@ -15,7 +15,7 @@ export function LandingPage(props) {
     <div className="home">
       <h1 className="welcome">Peek</h1>
       <br />
-      <h2 className="tag">Discover your local favorite hiking trails</h2>
+      <h2 className="tag">Discover your favorite local hiking trails</h2>
       <LoginForm />
     </div>
   );
