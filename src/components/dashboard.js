@@ -42,7 +42,8 @@ class Dashboard extends React.Component {
         result => {
           this.setState({
             isLoaded: true,
-            trails: result.trails
+            trails: result.trails,
+            remove: "none"
           });
         },
         error => {
