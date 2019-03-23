@@ -17,6 +17,7 @@ Register or Demo Login:
 
 ## Built with:
 
+<p align="middle">
 <h2>FrontEnd</h2>
 
 - React
@@ -50,6 +51,7 @@ Register or Demo Login:
 - MongoDB
 - Atlas
 - Cors
+  </p>
 
 ## Screenshots
 
