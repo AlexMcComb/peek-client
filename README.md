@@ -1,8 +1,8 @@
 ## Peek
 
-An fullstack app to use skills learned for React and Redux. The user is able to log in or register, filter hikes based on their preferences, add them to their favorites, and visualize the hikes on a map.
+<h3>An fullstack app to use skills learned for React and Redux. The user is able to log in or register, filter hikes based on their preferences, add them to their favorites, and visualize the hikes on a map.
 
-The hiking trail data is limited to Salt Lake City and the surrounding area due to restrictions on the API.
+The hiking trail data is limited to Salt Lake City and the surrounding area due to restrictions on the API.</h3>
 
 ## Demo
 
@@ -12,7 +12,7 @@ Demo the app and discover new hiking areas around Salt Lake City.
 
 ## Built with:
 
-FrontEnd:
+<h2>FrontEnd:</h2>
 
 - React
 - Redux
@@ -22,7 +22,7 @@ FrontEnd:
 - HTML / CSS
 - Heroku
 
-Testing:
+<h2>Testing:</h2>
 
 - Chai
 - Chai-HTTP
@@ -31,13 +31,13 @@ Testing:
 - Jest
 - Enzyme
 
-User Auth:
+<h2>User Auth:</h2>
 
 - Bcryptjs
 - JSON Web Token (JWT)
 - Passport
 
-Backend:
+<h2>Backend:</h2>
 
 - Express
 - Mongoose
@@ -48,27 +48,28 @@ Backend:
 
 ## Screenshots
 
-Main Page:
+<h2>Main Page:</h2>
 
 ![main page](screenshots/mainPage.png)
 
-Register:
+<h2>Register:</h2>
 
 ![register](screenshots/register.png)
 
-Landing Page:
+<h2>Landing Page:</h2>
 
 ![user homepage](screenshots/userHomepage.png)
 
-Discover:
+<h2>Discover:</h2>
 
 ![discover](screenshots/discover.png)
 
-Mobile:
+<h2>Mobile:</h2>
 
-<p float="left" align="middle">
+<p align="middle">
   <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobile.png" width="400" >
    <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMain.png" width="400" >
 </p>
-
+<p align="middle">
 <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMap.png" width="416">
+</p>
