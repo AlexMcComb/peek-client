@@ -65,8 +65,8 @@ Discover:
 ![discover](screenshots/discover.png)
 
 Mobile:
-<span>
-<img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobile.png" width="416" >
-<img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMain.png" width="416" ></span>
+
+:-------------------------:|:-------------------------:
+<img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobile.png" width="416" > | <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMain.png" width="416" >
 
 <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMap.png" width="416">
