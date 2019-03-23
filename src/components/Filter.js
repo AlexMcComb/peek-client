@@ -46,7 +46,7 @@ const MapView = props => {
             </select>
             <select name="star" onChange={props.handleChange}>
               <option disabled selected>
-                Minimum Rating
+                Rating
               </option>
               <option value="1">1 star</option>
               <option value="2">2 star</option>

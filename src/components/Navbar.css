@@ -6,8 +6,7 @@ body {
 .topnav {
   background-color: #e7f6ff;
   overflow: hidden;
-  padding-right: 2%;
-  padding-left: 2%;
+  padding: 8px;
   z-index: 1;
 }
 
@@ -15,8 +14,9 @@ body {
   color: #5dd1ee;
   display: inline-block;
   margin-left: 15px;
-  font-size: 31px;
-  margin-top: 20px;
+  font-size: 28px;
+  margin: 0;
+  padding: 6px 15px;
 }
 
 /* Style the links inside the navigation bar */
@@ -25,19 +25,17 @@ body {
   display: block;
   color: #5dd1ee;
   text-align: center;
-  padding: 8px 5px;
+  padding: 16px 30px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
-  margin-right: 85px;
-  margin-top: 25px;
+  margin: 0;
 }
 
 .icon {
   float: left;
-  margin-top: 15px;
-  margin-left: 35px;
-  width: 55px;
+  margin-left: 16px;
+  width: 49px;
 }
 
 @media screen and (max-width: 600px) {
@@ -48,19 +46,16 @@ body {
     float: right;
     display: block;
   }
-}
-
-@media screen and (max-width: 600px) {
   .topnav h4 {
-    padding: 7px;
     float: right;
     font-size: 13px;
+    padding: 13px 15px;
     margin-right: 15px;
   }
-
   .topnav h1 {
     font-size: 22px;
     padding: 4px;
+    padding: 9px 15px;
   }
   .icon {
     margin-left: 10px;
