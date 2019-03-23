@@ -66,7 +66,9 @@ Discover:
 
 Mobile:
 
-:-------------------------:|:-------------------------:
-<img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobile.png" width="416" > | <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMain.png" width="416" >
+<p float="left" align="middle">
+  <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobile.png" width="400" >
+   <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMain.png" width="400" >
+</p>
 
 <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMap.png" width="416">
