@@ -1,4 +1,3 @@
-<font face="verdana">
 ## Peek
 
 <h3>An fullstack app to use skills learned for React and Redux. The user is able to log in or register, filter hikes based on their preferences, add them to their favorites, and visualize the hikes on a map.
@@ -9,7 +8,12 @@ The hiking trail data is limited to Salt Lake City and the surrounding area due 
 
 Demo the app and discover new hiking areas around Salt Lake City.
 
-- https://peeks.herokuapp.com/
+Register or Demo Login:
+
+- username: demo
+- password: demo123456
+
+* https://peeks.herokuapp.com/
 
 ## Built with:
 
@@ -74,4 +78,3 @@ Demo the app and discover new hiking areas around Salt Lake City.
 <p align="middle">
 <img src = "https://github.com/AlexMcComb/peek-client/blob/master/screenshots/mobileMap.png" width="416">
 </p>
-</font>
