@@ -12,6 +12,7 @@ p {
   position: fixed;
   height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sidebar li {
@@ -84,6 +85,7 @@ input[type="checkbox"] {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.25s ease-in-out;
+  -webkit-overflow-scrolling: touch;
 }
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 600px;
