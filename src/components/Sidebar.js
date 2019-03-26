@@ -82,13 +82,6 @@ const Sidebar = props => {
             >
               Remove
             </button>
-            <button
-              onClick={() => {
-                props.mapItem(item);
-              }}
-            >
-              > zoom to
-            </button>
             <MobileMap
               trails={props.trails}
               zoom={props.zoom}
