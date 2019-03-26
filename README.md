@@ -1,6 +1,6 @@
 ## Peek
 
-<h3>An fullstack app to use skills learned for React and Redux. The user is able to log in or register, filter hikes based on their preferences, add them to their favorites, and visualize the hikes on a map.
+<h3>A fullstack app to use React and Redux skills. The user is able to log in or register, filter hikes based on their preferences, add them to their favorites, and visualize the hikes on a map.
 
 The hiking trail data is limited to Salt Lake City and the surrounding area due to restrictions on the API.</h3>
 

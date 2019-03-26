@@ -22,11 +22,17 @@ const Sidebar = props => {
               props.mapItem(item);
             }}
           >
-            🏔 {item.name}
+            {item.name}
           </h2>
 
           <input id={item.id} className="toggle" type="checkbox" />
-          <label htmlFor={item.id} className="lbl-toggle label">
+          <label
+            htmlFor={item.id}
+            className="lbl-toggle label"
+            onClick={() => {
+              props.mapItem(item);
+            }}
+          >
             More Info
           </label>
           <div className="collapsible-content">
@@ -76,13 +82,7 @@ const Sidebar = props => {
             >
               Remove
             </button>
-            <button
-              onClick={() => {
-                props.mapItem(item);
-              }}
-            >
-              zoom to
-            </button>
+            <button>zoom to</button>
             <MobileMap
               trails={props.trails}
               zoom={props.zoom}

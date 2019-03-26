@@ -84,7 +84,7 @@ class Dashboard extends React.Component {
         );
     } else {
       fetch(
-        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=0&key=${API_KEY}`
+        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=5&key=${API_KEY}`
       )
         .then(res => res.json())
         .then(result => {
