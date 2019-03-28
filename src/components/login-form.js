@@ -48,7 +48,7 @@ export class LoginForm extends React.Component {
           validate={[required, nonEmpty]}
         />
         <button className="landingButton">Log in</button>
-        <Link to="/register">Register →</Link>
+        <Link to="/register">Register</Link>
       </form>
     );
   }
