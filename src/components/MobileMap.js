@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import "./App.css";
 import "leaflet/dist/leaflet.css";
-import "./Sidebar";
+import "./Sidebar.css";
 import mapMarkerURL from "./map-marker.svg";
 
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;

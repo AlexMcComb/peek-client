@@ -19,6 +19,7 @@
     "react-leaflet": "^2.2.1",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
+    "react-window-size": "^1.2.2",
     "redux": "^3.6.0",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0"

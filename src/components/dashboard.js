@@ -1,7 +1,6 @@
 import React from "react";
 import requiresLogin from "./requires-login";
 import { fetchProtectedData } from "../actions/protected-data";
-
 import "./App.css";
 import MapView from "./Mapview";
 import Sidebar from "./Sidebar";
@@ -31,11 +30,10 @@ class Dashboard extends React.Component {
     this.removeFavorite = this.removeFavorite.bind(this);
     this.filterTrails = this.filterTrails.bind(this);
   }
-
   componentDidMount() {
     this.props.dispatch(fetchProtectedData());
     fetch(
-      `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=1&key=${API_KEY}`
+      `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=5&key=${API_KEY}`
     )
       .then(res => res.json())
       .then(
@@ -82,17 +80,6 @@ class Dashboard extends React.Component {
             });
           }
         );
-    } else {
-      fetch(
-        `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=5&key=${API_KEY}`
-      )
-        .then(res => res.json())
-        .then(result => {
-          this.setState({
-            isLoaded: true,
-            trails: result.trails
-          });
-        });
     }
   }
 
@@ -119,8 +106,8 @@ class Dashboard extends React.Component {
   removeFavorite(item) {
     let todos = [...this.state.todos];
     let disabled = [...this.state.disabled];
-    todos.splice(item, 1);
-    disabled.splice(item, 1);
+    todos.splice(todos.indexOf(item.id), 1);
+    disabled.splice(disabled.indexOf(item.id), 1);
     this.setState({ todos: todos, disabled: disabled });
     if (todos.length > 0) {
       fetch(
@@ -148,10 +135,15 @@ class Dashboard extends React.Component {
   }
 
   handleSubmit(e) {
+    let results = [...this.state.maxRes];
+    if (results < 1) {
+      alert("Please select number of results!");
+    }
     this.setState({ [e.target.name]: e.target.value });
     e.preventDefault();
     this.filterTrails();
   }
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -160,7 +152,7 @@ class Dashboard extends React.Component {
     this.setState({
       lat: item.latitude,
       lng: item.longitude,
-      zoom: 14
+      zoom: 16
     });
   };
 
@@ -208,5 +200,4 @@ class Dashboard extends React.Component {
     }
   }
 }
-
 export default requiresLogin()(Dashboard);
