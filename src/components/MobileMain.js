@@ -2,11 +2,11 @@ import React from "react";
 import Filter from "./Filter";
 import MobileMap from "./MobileMap";
 
-import "./Sidebar.css";
+import "./MobileMain.css";
 
-const Sidebar = props => {
+const MobileMain = props => {
   return (
-    <ul className="sidebar">
+    <ul className="bar">
       <Filter
         handleSubmit={props.handleSubmit}
         handleChange={props.handleChange}
@@ -15,7 +15,7 @@ const Sidebar = props => {
       />
 
       {props.trails.map(item => (
-        <li key={item.id} className="polaroid">
+        <li key={item.id} className="polaroids">
           <img src={item.imgMedium} alt="default" />
           <h2
             onClick={() => {
@@ -25,23 +25,20 @@ const Sidebar = props => {
             {item.name}
           </h2>
 
-          <input
-            id={item.id}
-            className="toggle"
-            type="radio"
-            name="radioButton"
-          />
+          <input id={item.id} className="toggle" type="checkbox" />
+
           <label
             htmlFor={item.id}
-            className="lbl-toggle label"
+            className="lbl-toggles labels"
             onClick={() => {
               props.mapItem(item);
             }}
           >
             More Info
           </label>
-          <div className="collapsible-content">
-            <div className="content-inner label">
+
+          <div className="collapsible-contents">
+            <div className="contents-inner labels">
               <p>
                 <strong>Location: </strong>
                 {item.location}
@@ -67,7 +64,7 @@ const Sidebar = props => {
               </p>
             </div>
             <button
-              className="wishlistButton"
+              className="wishlistButtons"
               disabled={props.disabled.indexOf(item.id) !== -1}
               onClick={() => {
                 props.disableButton(item);
@@ -78,7 +75,7 @@ const Sidebar = props => {
             </button>
 
             <button
-              className="removeButton"
+              className="removeButtons"
               todos={props.todos.indexOf(item.id) !== -1}
               onClick={() => {
                 props.removeFavorite(item);
@@ -100,4 +97,4 @@ const Sidebar = props => {
   );
 };
 
-export default Sidebar;
+export default MobileMain;

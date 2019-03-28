@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProtectedData());
     fetch(
-      `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=10&key=${API_KEY}`
+      `https://www.hikingproject.com/data/get-trails?lat=40.777&lon=-111.628&maxResults=1&key=${API_KEY}`
     )
       .then(res => res.json())
       .then(

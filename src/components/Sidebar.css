@@ -51,6 +51,9 @@ input[type="checkbox"] {
   display: none;
 }
 
+input[type="radio"] {
+  display: none;
+}
 .lbl-toggle {
   display: block;
   font-weight: bold;
