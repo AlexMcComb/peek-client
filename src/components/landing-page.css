@@ -59,6 +59,10 @@ h1 {
   font-size: 24px;
 }
 
+h4 {
+  color: white;
+}
+
 .formLabel {
   font-size: 20px;
   margin-bottom: 100px;
@@ -127,7 +131,7 @@ a {
   .tag {
     font-size: 31px;
     top: 20%;
-    left: 52%;
+    left: 51%;
     display: table;
     display: table-cell;
     vertical-align: middle;
@@ -170,8 +174,8 @@ a {
   }
   .tag {
     font-size: 22px;
-    top: 23%;
-    left: 52%;
+    top: 20%;
+    left: 50%;
     line-height: 30px;
   }
   .welcome {
